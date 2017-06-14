@@ -7,13 +7,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-//import javax.script.ScriptEngineManager;
-//import javax.script.ScriptEngine;
-//import javax.script.ScriptException;
 
 public class MainActivity extends AppCompatActivity {
 
     public String equation = "";
+    public String opnd1 = "";
+    public String opnd2 = "";
+    public String operator = "";
+    public Integer result = 0;
+
+    private boolean isOp = false;
+
 
 
 
@@ -24,13 +28,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleButton(View view) {
+
         // Get the button based on id
         Button b = (Button)view;
         String bText = b.getText().toString();
 
+        // If on first opperand
+        if (!isOp) {
+            opnd1 += bText;
+        }
+        else {
+            opnd2 += bText;
+        }
+
         // Concat the string with correct number/operation
         equation += bText;
         updateEquation(view);
+
+    }
+
+    public void handleOperator(View view) {
+
+        if (!isOp) {
+            // Get the button based on id
+            Button b = (Button) view;
+            String bText = b.getText().toString();
+            operator = bText;
+
+            equation += bText;
+
+            updateEquation(view);
+
+            isOp = true;
+        }
 
     }
 
@@ -45,8 +75,24 @@ public class MainActivity extends AppCompatActivity {
      *      This code modified from:
      *          https://stackoverflow.com/questions/3422673/evaluating-a-math-expression-given-in-string-form
      */
-    public void evaluateEquation (View view) {
+    public void evaluateEquation (View view){
 
+        switch (operator) {
+            case "+":
+                result = Integer.parseInt(opnd1) + Integer.parseInt(opnd2);
+                break;
+            case "-":
+                result = Integer.parseInt(opnd1) - Integer.parseInt(opnd2);
+                break;
+            default:
+                result = 333;
+                break;
+        }
+
+        equation += " = ";
+        equation += Integer.toString(result);
+
+        updateEquation(view);
     }
 
     /** UPDATE EQUATION
