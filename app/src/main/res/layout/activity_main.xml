@@ -42,8 +42,8 @@
             style="@style/EqualButton"
             android:id="@+id/buttonEqual"
             android:onClick="evaluateEquation"
-            android:text="@string/button_equal"
-            />
+            android:textSize="40dp"
+            android:text="@string/button_equal" />
     </LinearLayout>
 
     <LinearLayout
