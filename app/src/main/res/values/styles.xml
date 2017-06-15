@@ -30,10 +30,12 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">0.25</item>
         <item name="android:textSize">40dp</item>
+
     </style>
 
     <style name="ClearButton">
         <item name="android:background">@color/colorClearButton</item>
+        <!--<item name="android:background">@drawable/roundedbutton</item>-->
         <item name="android:layout_marginTop">-5dp</item>
         <item name="android:layout_marginBottom">-5dp</item>
         <item name="android:layout_marginLeft">-3dp</item>
