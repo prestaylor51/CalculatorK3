@@ -2,10 +2,15 @@ package com.taylor.preston.calculatork3;
 
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -43,8 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 opnd2 += bText;
             }
 
-            // Concat the string with correct number/operation
+            addImage(view,1);
 
+            // Concat the string with correct number/operation
                 equation += bText;
                 updateEquation(view);
             }
@@ -133,6 +139,41 @@ public class MainActivity extends AppCompatActivity {
         isOp = false;
 
         updateEquation(view);
+
+    }
+
+    /** ADD IMAGE
+     * @param view
+     * @param size
+     *      which image from the drawable folder to use
+     */
+    public void addImage(View view, int size) {
+
+        //setContentView(R.layout.activity_main);
+        RelativeLayout relativelayout = (RelativeLayout)findViewById(R.id.mainLayout);
+
+        ImageView imageview = new ImageView(MainActivity.this);
+        imageview.setId(1);
+
+        RelativeLayout.LayoutParams params = new RelativeLayout
+                .LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+
+        // Add image path from drawable folder.
+        imageview.setImageResource(R.drawable.one);
+        imageview.setLayoutParams(params);
+        relativelayout.addView(imageview);
+
+        ImageView image2 = new ImageView(MainActivity.this);
+        image2.setId(2);
+        RelativeLayout.LayoutParams params2 = new RelativeLayout
+                .LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        params2.addRule(RelativeLayout.RIGHT_OF,imageview.getId());
+
+        imageview.setImageResource(R.drawable.five);
+        imageview.setLayoutParams(params2);
+
+        relativelayout.addView(image2);
 
     }
 

@@ -5,45 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.taylor.preston.calculatork3.MainActivity"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:weightSum="1"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/linearLayout4"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
         <Button
-            style="@style/NumButton"
             android:id="@+id/button0"
+            style="@style/NumButton"
             android:onClick="handleButton"
-            android:text="@string/button_0"
-            />
+            android:text="@string/button_0" />
 
         <Button
-            style="@style/OpButton"
             android:id="@+id/buttonAdd"
-            android:onClick="handleOperator"
-            android:text="@string/button_add"
-            />
-
-        <Button
             style="@style/OpButton"
-            android:id="@+id/buttonsSub"
             android:onClick="handleOperator"
-            android:text="@string/button_sub"
-            />
+            android:text="@string/button_add" />
 
         <Button
-            style="@style/EqualButton"
+            android:id="@+id/buttonsSub"
+            style="@style/OpButton"
+            android:onClick="handleOperator"
+            android:text="@string/button_sub" />
+
+        <Button
             android:id="@+id/buttonEqual"
+            style="@style/EqualButton"
             android:onClick="evaluateEquation"
-            android:textSize="40dp"
-            android:text="@string/button_equal" />
+            android:text="@string/button_equal"
+            android:textSize="40dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -52,112 +49,100 @@
         android:layout_height="60dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
         <Button
-            style="@style/NumButton"
             android:id="@+id/button1"
+            style="@style/NumButton"
             android:onClick="handleButton"
-            android:text="@string/button_1"
-            />
+            android:text="@string/button_1" />
 
         <Button
-            style="@style/NumButton"
             android:id="@+id/button2"
+            style="@style/NumButton"
             android:onClick="handleButton"
-            android:text="@string/button_2"
-            />
+            android:text="@string/button_2" />
 
         <Button
-            style="@style/NumButton"
             android:id="@+id/button3"
+            style="@style/NumButton"
             android:onClick="handleButton"
-            android:text="@string/button_3"
-            />
+            android:text="@string/button_3" />
 
         <Button
-            style="@style/OpButton"
             android:id="@+id/buttonDiv"
-            android:onClick="handleOperator"
-            android:text="@string/button_div"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout2"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
-
-        <Button
-            style="@style/NumButton"
-            android:id="@+id/button4"
-            android:onClick="handleButton"
-            android:text="@string/button_4"
-           />
-
-        <Button
-            style="@style/NumButton"
-            android:id="@+id/button5"
-            android:onClick="handleButton"
-            android:text="@string/button_5"
-            />
-
-        <Button
-            style="@style/NumButton"
-            android:id="@+id/button6"
-            android:onClick="handleButton"
-            android:text="@string/button_6"
-           />
-
-        <Button
             style="@style/OpButton"
-            android:id="@+id/buttonMult"
             android:onClick="handleOperator"
-            android:text="@string/button_mult"
-            />
+            android:text="@string/button_div" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/NumButton"
+            android:onClick="handleButton"
+            android:text="@string/button_4" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/NumButton"
+            android:onClick="handleButton"
+            android:text="@string/button_5" />
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/NumButton"
+            android:onClick="handleButton"
+            android:text="@string/button_6" />
+
+        <Button
+            android:id="@+id/buttonMult"
+            style="@style/OpButton"
+            android:onClick="handleOperator"
+            android:text="@string/button_mult" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
         <Button
-            style="@style/NumButton"
             android:id="@+id/button7"
+            style="@style/NumButton"
             android:onClick="handleButton"
-            android:text="@string/button_7"
-           />
+            android:text="@string/button_7" />
 
         <Button
-            style="@style/NumButton"
             android:id="@+id/button8"
-            android:onClick="handleButton"
-            android:text="@string/button_8"
-            />
-
-        <Button
             style="@style/NumButton"
-            android:id="@+id/button9"
             android:onClick="handleButton"
-            android:text="@string/button_9"
-            />
+            android:text="@string/button_8" />
 
         <Button
-            style="@style/ClearButton"
+            android:id="@+id/button9"
+            style="@style/NumButton"
+            android:onClick="handleButton"
+            android:text="@string/button_9" />
+
+        <Button
             android:id="@+id/buttonClear"
+            style="@style/ClearButton"
             android:onClick="clearEquation"
-            android:text="@string/button_clear"
-            />
+            android:text="@string/button_clear" />
     </LinearLayout>
 
     <TextView
@@ -165,8 +150,28 @@
         android:layout_width="0dp"
         android:layout_height="63dp"
         android:text=""
+        android:textSize="50dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:textSize="50dp"/>
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="143dp"
+        android:layout_height="187dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteY="234dp">
+
+    </RelativeLayout>
+
+
 </android.support.constraint.ConstraintLayout>
