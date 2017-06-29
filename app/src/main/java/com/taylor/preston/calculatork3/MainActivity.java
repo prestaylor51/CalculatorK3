@@ -4,11 +4,14 @@ package com.taylor.preston.calculatork3;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -36,8 +39,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        RecyclerView
+//
+//        LinearLayoutManager layoutMangager
+
+//        final Button button = (Button) findViewById(R.id.button_id);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                // Perform action on click
+//
+//
+//                // currentContext.startActivity(activityChangeIntent);
+//
+//
+//            }
+//        });
     }
 
+    /** HANDLE BUTTON
+     *      Is called when any of the numbers are pressed
+     *
+     * @param view
+     */
     public void handleButton(View view) {
         if (!isEval) {
             // Get the button based on id
@@ -58,9 +82,14 @@ public class MainActivity extends AppCompatActivity {
                 equation += bText;
                 updateEquation(view);
             }
-
     }
 
+    /** HANDLE OPERATOR
+     *      Handles the input of operators. Only alows one operator to be pressed
+     *      for an equation
+     *
+     * @param view
+     */
     public void handleOperator(View view) {
 
         if (!isOp) {
@@ -75,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
 
             isOp = true;
         }
-
     }
 
     /** EVALUATE EQUATION
@@ -105,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
                     result = 333;
                     break;
             }
-
 
             equation += " = ";
             equation += Integer.toString(result);
@@ -143,7 +170,6 @@ public class MainActivity extends AppCompatActivity {
         isOp = false;
 
         updateEquation(view);
-
     }
 
     /** ADD IMAGE
@@ -182,3 +208,23 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 }
+
+//public class PresentActivity extends Activity {
+//    protected void onCreate(Bundle icicle) {
+//        super.onCreate(icicle);
+//
+//        setContentView(R.layout.content_layout_id);
+//
+//        final Button button = (Button) findViewById(R.id.button_id);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                // Perform action on click
+//                Intent activityChangeIntent = new Intent(PresentActivity.this, NextActivity.class);
+//
+//                // currentContext.startActivity(activityChangeIntent);
+//
+//                PresentActivity.this.startActivity(activityChangeIntent);
+//            }
+//        });
+//    }
+//}
