@@ -40,11 +40,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        RecyclerView
-//
-//        LinearLayoutManager layoutMangager
 
-//        final Button button = (Button) findViewById(R.id.button_id);
+
+        LinearLayoutManager layoutMangager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView imageList = (RecyclerView) findViewById(R.id.recyclerview);
+        imageList.setLayoutManager(layoutMangager);
+
+        ImageView image = new ImageView(this);
+        image.setImageResource(R.drawable.one);
+
+        imageList.addView(image);
+
+//        final Button button = (Button) findViewById(R.id.button0);
 //        button.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View v) {
 //                // Perform action on click
